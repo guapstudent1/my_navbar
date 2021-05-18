@@ -191,12 +191,12 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
   Widget get _logInPrompt {
-    return new Center(
-      child: new Column(
+    return Center(
+      child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
-          new Text(
+          Text(
             'Please add user information',
             style: const TextStyle(fontSize: 18.0),
           ),
@@ -212,7 +212,7 @@ class _MyHomePageState extends State<MyHomePage> {
       new MaterialPageRoute(
         fullscreenDialog: true,
         builder: (context) {
-          return new UpdateUserScreen();
+          return UpdateUserScreen();
         },
       ),
     );
@@ -231,13 +231,13 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return new Scaffold(
       drawer: NavBar(),
-      appBar: new AppBar(
-        title: new Text('Inherited Widget Test'),
+      appBar: AppBar(
+        title: Text('Inherited Widget Test'),
       ),
       body: body,
-      floatingActionButton: new FloatingActionButton(
+      floatingActionButton: FloatingActionButton(
         onPressed: () => _updateUser(context),
-        child: new Icon(Icons.edit),
+        child: Icon(Icons.edit),
       ),
     );
   }
@@ -258,34 +258,34 @@ class UpdateUserScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 // get reference to your store
     final container = StateContainer.of(context);
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text('Edit User Info'),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Edit User Info'),
       ),
-      body: new Padding(
-        padding: new EdgeInsets.all(16.0),
-        child: new Form(
+      body: Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Form(
           key: formKey,
-          child: new ListView(
+          child: ListView(
             children: [
-              new TextFormField(
+              TextFormField(
                 key: firstNameKey,
                 style: Theme.of(context).textTheme.headline5,
                 decoration: new InputDecoration(
                   hintText: 'First Name',
                 ),
               ),
-              new TextFormField(
+              TextFormField(
                 key: lastNameKey,
                 style: Theme.of(context).textTheme.headline5,
                 decoration: new InputDecoration(
                   hintText: 'Last Name',
                 ),
               ),
-              new TextFormField(
+              TextFormField(
                 key: emailKey,
                 style: Theme.of(context).textTheme.headline5,
-                decoration: new InputDecoration(
+                decoration: InputDecoration(
                   hintText: 'Email Address',
                 ),
               )
@@ -293,8 +293,8 @@ class UpdateUserScreen extends StatelessWidget {
           ),
         ),
       ),
-      floatingActionButton: new FloatingActionButton(
-        child: new Icon(Icons.add),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
         onPressed: () {
           final form = formKey.currentState!;
           if (form.validate()) {
